@@ -1,4 +1,4 @@
-package com.krakedev.inventario;
+package com.krakedev.inventario.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
