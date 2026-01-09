@@ -1,5 +1,6 @@
 package com.krakedev.inventario.entity;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
