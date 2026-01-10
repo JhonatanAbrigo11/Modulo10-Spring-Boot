@@ -1,0 +1,25 @@
+package com.krakedev.veterinario.repository;
+
+import java.time.LocalDate;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.krakedev.veterinario.entity.Mascota;
+
+public interface MascotaRepository extends JpaRepository<Mascota, Integer> {
+
+    Optional<Mascota> findById(int id);
+
+    Optional<Mascota> findByNombre(String nombre);
+
+    Optional<Mascota> findByNombreDueno(String nombreDueno);
+
+    Optional<Mascota> findByEspecie(String especie);
+
+    Optional<Mascota> findByEdad(int edad);
+
+    Optional<Mascota> findByFechaRegistro(LocalDate fechaRegistro);
+    
+
+}
