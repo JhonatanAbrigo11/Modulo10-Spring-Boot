@@ -9,7 +9,7 @@ import com.krakedev.veterinario.entity.Mascota;
 
 public interface MascotaRepository extends JpaRepository<Mascota, Integer> {
 
-    Optional<Mascota> findById(int id);
+    Optional<Mascota> findById(Long id);
 
     Optional<Mascota> findByNombre(String nombre);
 

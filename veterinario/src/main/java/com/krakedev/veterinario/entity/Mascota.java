@@ -24,14 +24,14 @@ public class Mascota {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "id_mascota")
-    private int id;
+    private Integer id;
     @Column(name = "nombre_mascota", nullable = false, length = 100)
     private String nombre;
     @Column(name = "especie_mascota", nullable = false, length = 100)
     private String especie;
 
     @Column(name = "edad_mascota")
-    private int edad;
+    private Integer edad;
 
     @Column(name = "nombre_dueno", nullable = false, length = 100)
     private String nombreDueno;

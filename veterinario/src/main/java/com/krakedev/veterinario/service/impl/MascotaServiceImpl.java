@@ -15,7 +15,7 @@ import lombok.SneakyThrows;
 @Service
 @RequiredArgsConstructor
 public class MascotaServiceImpl implements MascotaService {
-    private MascotaRepository mascotaRepository;
+    private final MascotaRepository mascotaRepository;
 
     @Override
     public Mascota registrarMascota(Mascota mascota) {
