@@ -39,7 +39,7 @@ public class MascotaServiceImpl implements MascotaService {
 
     @Override
     @SneakyThrows
-    public Mascota actualizarMascota(Long id, Mascota mascota) {
+    public Mascota actualizarMascota(int id, Mascota mascota) {
         Mascota mascotaExistente = mascotaRepository.findById(id)
                 .orElseThrow(() -> new Exception("Mascota no encontrada con id: " + id));
 

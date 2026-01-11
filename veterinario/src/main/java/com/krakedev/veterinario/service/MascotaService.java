@@ -10,7 +10,7 @@ public interface MascotaService {
     List<Mascota> listarMascotas();
     Optional<Mascota> buscarPorNombre (String nombre);
     Optional<Mascota> buscarPorId (int id);
-    Mascota actualizarMascota(Long id,Mascota mascota);
+    Mascota actualizarMascota(int id,Mascota mascota);
     void eliminarMascota(Long id);
 
     
