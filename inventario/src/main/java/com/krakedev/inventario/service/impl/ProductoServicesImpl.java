@@ -35,7 +35,7 @@ public class ProductoServicesImpl implements ProductoService {
     }
 
     @Override
-    public Optional<Producto> buscarPorIdNombre(String nombre) {
+    public Optional<Producto> buscarPorNombre(String nombre) {
         // Optional<Producto> producto= productoRepository.findByNombreProducto(nombre);
         // return producto;
         return productoRepository.findByNombreProducto(nombre);

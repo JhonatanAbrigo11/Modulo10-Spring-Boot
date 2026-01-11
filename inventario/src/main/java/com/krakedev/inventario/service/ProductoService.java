@@ -10,7 +10,7 @@ public interface ProductoService {
 
     Producto registrarProducto(Producto producto);
     List<Producto> listarProductos();
-    Optional<Producto> buscarPorIdNombre(String nombre);
+    Optional<Producto> buscarPorNombre(String nombre);
     Optional<Producto> buscarPorId(Long idProducto);
     Producto actualizarProducto(Long idProducto, Producto producto);
     void eliminarProducto(Long idProducto);
