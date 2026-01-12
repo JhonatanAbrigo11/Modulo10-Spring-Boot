@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.krakedev.veterinario.entity.EstadoMascota;
 import com.krakedev.veterinario.entity.Mascota;
 import com.krakedev.veterinario.service.MascotaService;
 
@@ -66,7 +67,7 @@ public class MascotaController {
             Mascota mascotaBDD = mascotaService.actualizarMascota(id, mascotaAcutalizada);
             return ResponseEntity.ok(mascotaBDD);
         } catch (RuntimeException exception) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND) .body("Mascota no encontrada con id: " + id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Mascota no encontrada con id: " + id);
 
         } catch (Exception exception) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
@@ -80,14 +81,31 @@ public class MascotaController {
             mascotaService.eliminarMascota((long) id);
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         } catch (RuntimeException exception) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND) .body("Mascota no encontrada con id: " + id);
-        }
-        catch (Exception exception) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Mascota no encontrada con id: " + id);
+        } catch (Exception exception) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
         }
 
     }
 
+    // Realizaar esto y listar
+    @PutMapping("/estado/{id}")
+    public ResponseEntity<?> cambiarEstadoMascota(@PathVariable int id,@RequestBody EstadoMascota estadoMascota) {
+        try {
+            Mascota mascotaActualizado = mascotaService.cambiarEstadoMascota(id, estadoMascota);
+            return ResponseEntity.ok(mascotaActualizado);
+        } catch (RuntimeException exception) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Mascota no encontrada con id: " + id);
+        } catch (Exception exception) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
+        }
+    }
+
+    @GetMapping("/estado/{estadoMascota}")
+    public ResponseEntity<List<Mascota>> listarMascotasPorEstado(@PathVariable EstadoMascota estadoMascota) {
+        List<Mascota> mascotas = mascotaService.obtenerMascotaPorEstado(estadoMascota);
+        return ResponseEntity.ok(mascotas);
+    }
     // private List<Mascota> mascotas = new ArrayList<>();
 
     // public MascotaController () {

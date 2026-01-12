@@ -39,4 +39,7 @@ public class Mascota {
     @Column(name = "fecha_registro")
     private LocalDate fechaRegistro;
 
+    @Column(name = "estado")
+    private EstadoMascota estadoMascota;
+
 }
